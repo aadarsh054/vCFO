@@ -1,58 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aadarsh Patidar – vCFO Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vCFO for Startups | Aadarsh Patidar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: {
+            center: true,
+            padding: '1rem',
+          },
+        },
+      }
+    }
+  </script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4faff;
-      color: #2c3e50;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
+    html {
+      scroll-behavior: smooth;
     }
-
-    .container {
-      max-width: 600px;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
     }
-
-    h1 {
-      font-size: 36px;
-      color: #0077b6;
-    }
-
-    p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #0077b6;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background-color: #023e8a;
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Hi, I’m Aadarsh Patidar</h1>
-    <p>Helping startups with virtual CFO and outsourced accounting services from India.</p>
-    <a href="mailto:aadarshpatidarofficial561@gmail.com" class="btn">Contact Me</a>
-  </div>
+
+<body class="bg-white text-gray-800">
+  <!-- Hero Section -->
+  <section class="bg-blue-900 text-white py-16 px-6 text-center fade-in">
+    <div class="container">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Virtual CFO Services for Startups & Entrepreneurs</h1>
+      <p class="text-lg md:text-xl mb-6">Scale faster with expert financial leadership — without the full-time cost.</p>
+      <a href="#contact" class="bg-white text-blue-900 px-6 py-2 rounded font-semibold hover:bg-gray-200">Get Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Who We Serve -->
+  <section class="py-12 px-6 fade-in">
+    <div class="container">
+      <h2 class="text-3xl font-semibold text-center mb-6">Who We Serve</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <li>✅ Early & Growth Stage Startups</li>
+        <li>✅ Indian & Global Founders</li>
+        <li>✅ SaaS, FinTech, D2C, and Tech Startups</li>
+        <li>✅ Founders Without Finance Background</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Services Offered -->
+  <section class="bg-gray-100 py-12 px-6 fade-in">
+    <div class="container">
+      <h2 class="text-3xl font-semibold text-center mb-6">Our vCFO Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded shadow">📊 Budgeting & Forecasting</div>
+        <div class="bg-white p-6 rounded shadow">💰 Cash Flow Management</div>
+        <div class="bg-white p-6 rounded shadow">📈 Financial Modeling</div>
+        <div class="bg-white p-6 rounded shadow">📑 Investor Reporting</div>
+        <div class="bg-white p-6 rounded shadow">📊 KPI & MIS Dashboards</div>
+        <div class="bg-white p-6 rounded shadow">🎯 Fundraising Support</div>
+        <div class="bg-white p-6 rounded shadow">🧠 Strategic Finance Advisory</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-12 px-6 fade-in">
+    <div class="container">
+      <h2 class="text-3xl font-semibold text-center mb-6">Why Choose Us</h2>
+      <div class="text-center space-y-4">
+        <p>🚀 Startup-Focused Approach</p>
+        <p>🌍 Remote-First, Global Experience</p>
+        <p>🎓 Led by Chartered Accountants</p>
+        <p>🧩 Tech-Integrated (Excel, Zoho, QBO, etc.)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Note -->
+  <section class="bg-blue-50 py-12 px-6 fade-in">
+    <div class="container text-center">
+      <h2 class="text-3xl font-semibold mb-4">About the Founder</h2>
+      <p class="text-lg font-medium mb-2">Aadarsh Patidar, CA (Pursuing)</p>
+      <p class="italic">“I help startups unlock clarity in finance — turning chaos into growth.”</p>
+      <p class="mt-2">📍 India-based | Serving UAE & US</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 px-6 bg-gray-100 fade-in">
+    <div class="container max-w-3xl mx-auto">
+      <h2 class="text-3xl font-semibold text-center mb-6">Book a Free Consultation</h2>
+      <form action="https://formspree.io/f/mjkograg" method="POST" class="space-y-4">
+        <input type="hidden" name="_redirect" value="thank-you.html" />
+        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded border" required />
+        <input type="email" name="email" placeholder="Email" class="w-full p-3 rounded border" required />
+        <input type="text" name="company" placeholder="Company Name" class="w-full p-3 rounded border" />
+        <textarea name="message" placeholder="How can we help?" rows="4" class="w-full p-3 rounded border" required></textarea>
+        <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded hover:bg-blue-800">Send Message</button>
+      </form>
+      <div class="text-center mt-4">
+        <p>Email: <a href="mailto:aadarshpatidarofficial561@gmail.com" class="text-blue-700">aadarshpatidarofficial561@gmail.com</a></p>
+        <p><a href="https://wa.me/6264163230" class="text-green-700">📱 Chat on WhatsApp</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Aadarsh Patidar | vCFO for Startups</p>
+  </footer>
 </body>
+
 </html>
