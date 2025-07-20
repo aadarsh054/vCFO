@@ -3,70 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>vCFO Services | Aadarsh Patidar</title>
+  <title>Aadarsh Patidar | vCFO Services for Startups</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
+      background-color: #f9fbfd;
+      color: #212529;
     }
     header {
-      background-color: #007BFF;
+      background-color: #004080;
       color: white;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
+    }
+    nav {
+      background-color: #003060;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     main {
-      padding: 20px;
+      padding: 30px 20px;
     }
     section {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #004080;
+    }
+    .service-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .service-detail {
+      display: none;
+      margin-top: 20px;
+      border-left: 4px solid #007BFF;
+      padding-left: 15px;
     }
     footer {
-      background-color: #333;
+      background-color: #002244;
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Welcome to vCFO Services</h1>
-    <p>by Aadarsh Patidar</p>
+    <h1>vCFO Services for Startups</h1>
+    <p>By Aadarsh Patidar | Strategic Financial Partner</p>
   </header>
 
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <main>
-    <section>
+    <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I'm Aadarsh 👋<br>I help startups and small businesses manage their finances virtually as a CFO.</p>
+      <p>I am Aadarsh Patidar, a CA Inter student and virtual CFO focused on helping Indian and global startups manage their finances effectively. I provide clarity, control, and strategic support for business growth.</p>
     </section>
 
-    <section>
-      <h2>Services</h2>
-      <ul>
-        <li>Bookkeeping & Accounting</li>
-        <li>Financial Planning & Analysis</li>
-        <li>Cash Flow Management</li>
-        <li>Budgeting & Forecasting</li>
-        <li>Startup Financial Strategy</li>
-      </ul>
+    <section id="services">
+      <h2>Our Services</h2>
+      <button class="service-button" onclick="toggleService('tax')">Tax Consultancy</button>
+      <button class="service-button" onclick="toggleService('vcfo')">vCFO Services</button>
+
+      <div id="tax" class="service-detail">
+        <h3>Tax Consultancy</h3>
+        <p>We offer complete tax advisory services including GST filing, Income Tax Returns, TDS compliance, and strategic tax planning for individuals, startups, and SMEs.</p>
+      </div>
+
+      <div id="vcfo" class="service-detail">
+        <h3>Virtual CFO (vCFO) Services</h3>
+        <p>End-to-end finance department outsourcing including MIS reporting, fundraising support, investor readiness, budgeting, cash flow analysis, and monthly performance reviews.</p>
+      </div>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
       <p>Email: aadarshpatidarofficial561@gmail.com</p>
       <p>Phone: +91 62641 63230</p>
+      <p><a href="https://wa.me/916264163230" class="whatsapp">💬 Chat on WhatsApp</a></p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Aadarsh Patidar | vCFO Services</p>
+    <p>&copy; 2025 Aadarsh Patidar | All rights reserved</p>
   </footer>
 
+  <script>
+    function toggleService(id) {
+      const services = document.querySelectorAll('.service-detail');
+      services.forEach(service => {
+        if (service.id === id) {
+          service.style.display = service.style.display === 'block' ? 'none' : 'block';
+        } else {
+          service.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
