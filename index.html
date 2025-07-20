@@ -5,74 +5,258 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aadarsh Patidar | vCFO Services for Startups</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f9fbfd;
-      color: #212529;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #E8ECEF;
+      color: #2D3436;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
     header {
-      background-color: #004080;
-      color: white;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, #4B5EAA 0%, #3B4A6B 100%);
+      color: #F1F5F9;
       text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
     }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      transform: rotate(20deg);
+      z-index: 0;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
     nav {
-      background-color: #003060;
+      background-color: #3B4A6B;
+      padding: 15px 0;
       text-align: center;
-      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
+
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #F1F5F9;
+      margin: 0 20px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      color: #A3BFFA;
     }
+
     main {
-      padding: 30px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      gap: 30px;
     }
+
     section {
-      margin-bottom: 40px;
+      position: relative;
+      padding: 30px;
+      background: #F7FAFC;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transform: skewY(-2deg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    h2 {
-      color: #004080;
+
+    section:hover {
+      transform: skewY(0deg);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
+
+    section h2 {
+      color: #4B5EAA;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
     .service-button {
-      display: inline-block;
-      margin: 10px;
+      background-color: #6B7280;
+      color: #F1F5F9;
       padding: 12px 20px;
-      background-color: #007BFF;
-      color: white;
-      text-decoration: none;
+      border: none;
       border-radius: 5px;
+      font-weight: 600;
       cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-align: center;
     }
+
+    .service-button:hover {
+      background-color: #A3BFFA;
+      transform: translateY(-3px);
+    }
+
     .service-detail {
       display: none;
       margin-top: 20px;
-      border-left: 4px solid #007BFF;
-      padding-left: 15px;
+      padding: 15px;
+      background: #E8ECEF;
+      border-left: 4px solid #6B7280;
+      border-radius: 5px;
+      transform: skewY(2deg);
     }
+
+    .service-detail.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+
     footer {
-      background-color: #002244;
-      color: white;
+      background-color: #2D3436;
+      color: #F1F5F9;
       text-align: center;
       padding: 20px;
+      margin-top: 40px;
     }
+
     .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 50px;
+      background-color: #48BB78;
+      color: #F1F5F9;
+      padding: 8px 12px;
+      border-radius: 25px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 0.85rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .whatsapp:hover {
+      background-color: #68D391;
+      transform: scale(1.05);
+    }
+
+    .whatsapp::before {
+      content: '💬';
+      font-size: 1rem;
+    }
+
+    /* Form Styling */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form label {
+      font-weight: 600;
+      color: #4B5EAA;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #6B7280;
+      border-radius: 5px;
+      font-size: 1rem;
+      background-color: #E8ECEF;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #A3BFFA;
+      box-shadow: 0 0 5px rgba(163, 191, 250, 0.5);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .contact-form button {
+      background-color: #6B7280;
+      color: #F1F5F9;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-align: center;
+    }
+
+    .contact-form button:hover {
+      background-color: #A3BFFA;
+      transform: translateY(-3px);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      nav a { margin: 0 10px; font-size: 1rem; }
+      section { padding: 20px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .whatsapp { padding: 6px 10px; font-size: 0.75rem; }
+      .contact-form input,
+      .contact-form textarea { font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -96,14 +280,14 @@
 
     <section id="services">
       <h2>Our Services</h2>
-      <button class="service-button" onclick="toggleService('tax')">Tax Consultancy</button>
-      <button class="service-button" onclick="toggleService('vcfo')">vCFO Services</button>
-
+      <div class="service-grid">
+        <button class="service-button" onclick="toggleService('tax')">Tax Consultancy</button>
+        <button class="service-button" onclick="toggleService('vcfo')">vCFO Services</button>
+      </div>
       <div id="tax" class="service-detail">
         <h3>Tax Consultancy</h3>
         <p>We offer complete tax advisory services including GST filing, Income Tax Returns, TDS compliance, and strategic tax planning for individuals, startups, and SMEs.</p>
       </div>
-
       <div id="vcfo" class="service-detail">
         <h3>Virtual CFO (vCFO) Services</h3>
         <p>End-to-end finance department outsourcing including MIS reporting, fundraising support, investor readiness, budgeting, cash flow analysis, and monthly performance reviews.</p>
@@ -112,24 +296,34 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: aadarshpatidarofficial561@gmail.com</p>
-      <p>Phone: +91 62641 63230</p>
-      <p><a href="https://wa.me/916264163230" class="whatsapp">💬 Chat on WhatsApp</a></p>
+      <form class="contact-form" action="https://formspree.io/f/mjkograg" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name" />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="Your Email" />
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Aadarsh Patidar | All rights reserved</p>
+    <p>© 2025 Aadarsh Patidar | All rights reserved</p>
   </footer>
+
+  <a href="https://wa.me/916264163230" class="whatsapp">Chat on WhatsApp</a>
 
   <script>
     function toggleService(id) {
       const services = document.querySelectorAll('.service-detail');
       services.forEach(service => {
         if (service.id === id) {
-          service.style.display = service.style.display === 'block' ? 'none' : 'block';
+          service.classList.toggle('active');
         } else {
-          service.style.display = 'none';
+          service.classList.remove('active');
         }
       });
     }
