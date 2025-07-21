@@ -5,39 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Aadarsh Patidar</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f0f2f5; color: #222; margin: 0; }
-    header { background: #004080; padding: 20px; color: white; text-align: center; }
-    nav { background: #003060; padding: 10px; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 800px; margin: 30px auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    h2 { color: #004080; margin-bottom: 10px; }
-    p { margin-bottom: 20px; }
-    footer { text-align: center; font-size: 14px; color: #888; margin: 40px 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #ecf0f1;
+      color: #2d2d2d;
+      margin: 0;
+    }
+    header {
+      background: #2c3e50;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    nav {
+      background: #1f2d3a;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a.active,
+    nav a:hover {
+      background: #3498db;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 0.8s ease-in;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    .profile-pic {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-pic img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin: 40px 0;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>About Me</h1>
-    <p>Meet your trusted Virtual CFO & Tax Advisor</p>
+    <p>Meet your trusted finance partner</p>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="about.html">About</a>
+    <a href="about.html" class="active">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 
   <div class="container">
+    <div class="profile-pic">
+      <img src="IMG_20250517_213859.jpg" alt="Aadarsh Patidar">
+    </div>
     <h2>Hi, I'm Aadarsh Patidar</h2>
-    <p>I'm a CA-Inter student with deep enthusiasm for financial leadership, tax strategy, and startup consulting. With a strong academic foundation and hands-on experience in accounts, MIS reporting, and compliance, I support founders and business owners in making financially sound decisions.</p>
+    <p>I’m a CA Inter student and finance professional focused on helping startups and entrepreneurs with compliance, fundraising, budgeting, and strategic planning. With real-world experience in managing financials, building dashboards, and streamlining reporting, I work as your part-time finance partner so you can focus on growing your business.</p>
 
-    <h2>My Mission</h2>
-    <p>To empower Indian startups, freelancers, and growing businesses with accessible, expert-level virtual CFO and tax services—bringing clarity to their numbers and confidence to their vision.</p>
-
-    <h2>Vision</h2>
-    <p>To be one of India's top tech-enabled CFO service providers, making professional financial services affordable and impactful for founders and solopreneurs.</p>
+    <p>Let's connect and take your financial systems to the next level!</p>
   </div>
 
   <footer>
